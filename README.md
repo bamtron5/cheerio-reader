@@ -1,10 +1,7 @@
 #Cheerio Reader 
 
 This project will prompt you from a node server to enter a url and an "article" selector and return the text of the article.
-
 The initial intent of this project was to have an automated method of an article to be read out loud to the user. 
-
-### Main Features
 
 ### Setup
 Clone the repo `git clone https://github.com/bamtron5/cheerio-reader.git`
