@@ -1,0 +1,198 @@
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: node index.js | say -i
+d
+d
+prompt: url:  prompt: selector:  Command-line input received:
+  url: d
+  selector: d
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: node index.js
+prompt: url:  http://www.infowars.com/state-dept-breaks-judges-deadline-on-clinton-emails/
+prompt: selector:  article
+Command-line input received:
+  url: http://www.infowars.com/state-dept-breaks-judges-deadline-on-clinton-emails/
+  selector: article
+The State Department broke a judge’s order on the number of former Secretary Hillary Rodham Clinton’s emails it was supposed to release Thursday, blaming the holiday season for throwing it off track.The department promised another release of emails next week to make up for its breach, and said even the emails it was releasing Thursday will not be fully processed and won’t be able to be sorted by senders or recipients in the department’s computer system.“We have worked diligently to come as close to the goal as possible, but with the large number of documents involved and the holiday schedule we have not met the goal this month. To narrow that gap, the State Department will make another production of former Secretary Clinton’s email sometime next week,” the department said in a statement.Read more
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: coreaudio
+-bash: coreaudio: command not found
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: l
+total 16
+21467746 drwxr-xr-x    5 bmorrison  1162256515   170 Dec 31 11:31 .
+ 1062341 drwxr-xr-x   68 bmorrison  1162256515  2312 Dec 31 11:30 ..
+21467749 -rw-r--r--    1 bmorrison  1162256515  1526 Dec 31 11:50 index.js
+21467973 drwxr-xr-x  105 bmorrison  1162256515  3570 Dec 31 11:31 node_modules
+21470055 -rw-r--r--    1 bmorrison  1162256515   369 Dec 31 11:57 package.json
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: git init
+Initialized empty Git repository in /Users/bmorrison/Sites/cheerioReader/.git/
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: l
+total 16
+21467746 drwxr-xr-x    6 bmorrison  1162256515   204 Dec 31 12:28 .
+ 1062341 drwxr-xr-x   68 bmorrison  1162256515  2312 Dec 31 11:30 ..
+21473047 drwxr-xr-x   10 bmorrison  1162256515   340 Dec 31 12:28 .git
+21467749 -rw-r--r--    1 bmorrison  1162256515  1526 Dec 31 11:50 index.js
+21467973 drwxr-xr-x  105 bmorrison  1162256515  3570 Dec 31 11:31 node_modules
+21470055 -rw-r--r--    1 bmorrison  1162256515   369 Dec 31 11:57 package.json
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: touch .gitignore
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: subl .gitignore
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: l
+total 24
+21467746 drwxr-xr-x    7 bmorrison  1162256515   238 Dec 31 12:28 .
+ 1062341 drwxr-xr-x   68 bmorrison  1162256515  2312 Dec 31 11:30 ..
+21473047 drwxr-xr-x   10 bmorrison  1162256515   340 Dec 31 12:29 .git
+21473080 -rw-r--r--    1 bmorrison  1162256515    12 Dec 31 12:29 .gitignore
+21467749 -rw-r--r--    1 bmorrison  1162256515  1526 Dec 31 11:50 index.js
+21467973 drwxr-xr-x  105 bmorrison  1162256515  3570 Dec 31 11:31 node_modules
+21470055 -rw-r--r--    1 bmorrison  1162256515   369 Dec 31 11:57 package.json
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: git add README.md
+fatal: pathspec 'README.md' did not match any files
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: touch README.md
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: subl README.md 
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: l
+total 32
+21467746 drwxr-xr-x    8 bmorrison  1162256515   272 Dec 31 12:30 .
+ 1062341 drwxr-xr-x   68 bmorrison  1162256515  2312 Dec 31 11:30 ..
+21473047 drwxr-xr-x   10 bmorrison  1162256515   340 Dec 31 12:30 .git
+21473080 -rw-r--r--    1 bmorrison  1162256515    12 Dec 31 12:29 .gitignore
+21473296 -rw-r--r--    1 bmorrison  1162256515   142 Dec 31 12:32 README.md
+21467749 -rw-r--r--    1 bmorrison  1162256515  1526 Dec 31 11:50 index.js
+21467973 drwxr-xr-x  105 bmorrison  1162256515  3570 Dec 31 11:31 node_modules
+21470055 -rw-r--r--    1 bmorrison  1162256515   369 Dec 31 11:57 package.json
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: git remote add origin https://github.com/bamtron5/cheerio-reader.git
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: git add .
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: git commit -m "initial commit"
+[master (root-commit) 0a9ea6c] initial commit
+ 4 files changed, 92 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 README.md
+ create mode 100644 index.js
+ create mode 100644 package.json
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: (master)git push origin
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: (master)git push origin master
+Counting objects: 6, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 1.15 KiB | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/bamtron5/cheerio-reader.git
+ * [new branch]      master -> master
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: (master)git branch -b bamtron5
+error: unknown switch `b'
+usage: git branch [<options>] [-r | -a] [--merged | --no-merged]
+   or: git branch [<options>] [-l] [-f] <branch-name> [<start-point>]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track           set up tracking mode (see git-pull(1))
+    --set-upstream        change upstream info
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      Unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --abbrev[=<n>]        use <n> digits to display SHA-1s
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    --list                list branch names
+    -l, --create-reflog   create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --no-merged <commit>  print only not merged branches
+    --merged <commit>     print only merged branches
+    --column[=<style>]    list branches in columns
+
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: (master)git checkout -b bamtron5
+Switched to a new branch 'bamtron5'
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: (bamtron5)git checkout -b pherepaphe
+Switched to a new branch 'pherepaphe'
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: (pherepaphe)git push origin bamtron5
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/bamtron5/cheerio-reader.git
+ * [new branch]      bamtron5 -> bamtron5
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: (pherepaphe)git push origin pherepaphe
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/bamtron5/cheerio-reader.git
+ * [new branch]      pherepaphe -> pherepaphe
+bmorrison@WS0000037US:[~/Sites/cheerioReader]: (pherepaphe)
