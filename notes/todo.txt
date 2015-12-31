@@ -1,0 +1,11 @@
+1. RSS Feed reader
+2. Bash script for say (MAC only?) or Node say module
+3. Saved sites
+4. Optional prompting
+	- saved sites selection
+	- for selector
+	- for rss feed
+5. Command for site running
+6. subfolder based selectors
+7. ability to bypass prompt by passing arguments
+8. prompt coloring
