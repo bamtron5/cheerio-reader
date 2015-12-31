@@ -26,7 +26,6 @@ prompt.get(schema, function(err, result){
     //set options
     options.url = result.url;
     options.selector = result.selector;
-    options.text = '';
 
     //read article from cheerio
     readArticle(options);
@@ -37,6 +36,13 @@ function readArticle(options){
 	  if (!error && response.statusCode == 200) {
 	    var $ = cheerio.load(html);
 	    var article = $(options.selector);
+
+	    /* if selector is not on the page then return an error*/
+	    if(article.length === 0){
+	    	console.log('\nYou made a boo boo:\n"' + options.selector + '" does not exist on the page.');
+	    	return false;
+	    }
+
 	    var text = '';
 	    $(article).children().each(function(i, element){
 	    	switch(element.name) {
@@ -63,7 +69,17 @@ function readArticle(options){
 	    			break;
 	    	}
 	    });
+
+	    /*OUR RETURNED TEXT*/
 	    console.log(text);
+	    return true;
+
+	  } else {
+
+	  	/* Your url did not resolve */
+	  	console.log('\nYou made a boo boo:\n' + error);
+	  	return false;
+
 	  }
 	});
 };
