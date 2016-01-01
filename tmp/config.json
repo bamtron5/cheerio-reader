@@ -1,0 +1,12 @@
+{
+ "sites": {
+  "Infowars": {
+   "sitename": "Infowars",
+   "selector": ".text article"
+  },
+  "CNN": {
+   "sitename": "CNN",
+   "selector": ".l-container"
+  }
+ }
+}
