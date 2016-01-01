@@ -1,35 +1,73 @@
-var cheerio = require("cheerio");
-var request = require("request");
-var prompt  = require("prompt");
+var cheerio   = require("cheerio");
+var request   = require("request");
+var inquirer  = require("inquirer");
+var fs        = require("fs");
 
-/*prompt schema*/
-var schema = {
-	properties: {
-	  url: {
-	    required: true
-	  },
-	  selector: {
-	    required: true
-	  }
-	}
-};
-
-prompt.start();
-prompt.get(schema, function(err, result){
-	var options = {};
-
-	/*output prompt to user*/
-	console.log('Command-line input received:');
-    console.log('  url: ' + result.url);
-    console.log('  selector: ' + result.selector);
-
-    //set options
-    options.url = result.url;
-    options.selector = result.selector;
-
-    //read article from cheerio
-    readArticle(options);
+fs.access('./tmp/config.json', fs.F_OK, function(err) {
+    if (!err) {
+        return;
+    } else {
+        writeConfig(JSON.parse("{}"));
+    }
 });
+
+var config = {};
+var sites = ["Add new site"];
+var siteOptions = [
+	{
+		type: "list",
+		name: "sites",
+		message: "Select a website or add a new one:",
+		choices: sites
+	}
+];
+
+inquirer.prompt( siteOptions, function( answers ) {
+	if(answers.sites === "Add new site"){
+		getSelector();
+	} else {
+		getUrl();
+	}
+});
+
+function getSelector(){
+	var selectorOptions = [
+		{
+			type: "input",
+			name: "selector",
+			message: "Choose an element selector\ne.g. article, #myId, .myClass, article#myId .myClass:"
+		}
+	];
+
+	inquirer.prompt( selectorOptions, function( answers ) {
+		config.selector = answers.selector;
+	});
+}
+
+function getUrl(){
+	var urlOptions = [
+		{
+			type: "input",
+			name: "url",
+			message: "Paste in your url:"
+		}
+	];
+
+	inquirer.prompt( urlOptions, function( answers ) {
+		config.url = answers.url;
+		readArticle(config);
+	});
+}
+
+function writeConfig(input){
+	fs.writeFile("./tmp/config.json", input, function(err) {
+	    if(err) {
+	        return console.log(err);
+	    }
+
+	    
+	}); 
+}
 
 function readArticle(options){
 	request(options.url, function (error, response, html) {
