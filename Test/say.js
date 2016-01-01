@@ -74,10 +74,13 @@ function readArticle(options){
 
 	    /*OUR RETURNED TEXT*/
 	    console.log(text);
-
-	    /*Speak the text */
+	  	
+	  	/*Don't show the output text and just read it*/
+	  	//text=String(text);
+	  	
+	  	/*Speak the text */
 	    say.speak(null,text); 
-	    return true;
+	    return true;	  	
 
 	  } else {
 

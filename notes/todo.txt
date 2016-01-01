@@ -9,3 +9,4 @@
 6. subfolder based selectors
 7. ability to bypass prompt by passing arguments
 8. prompt coloring
+9. Interactive addition to say.speak
