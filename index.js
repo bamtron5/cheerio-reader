@@ -2,29 +2,45 @@ var cheerio    = require("cheerio");
 var request    = require("request");
 var inquirer   = require("inquirer");
 var fs         = require("fs");
+var say        = require("say");
 var siteObj    = JSON.stringify({sites:{}},null,1);
-var fileConfig = require("./tmp/config.json") || siteObj;
+var fileConfig = require("./tmp/config.json");
 
 var app = function(){
 	var localConfig = {};
 	var sites = ["Add new site"];
+	var newSite = false;
 
-	var siteOptions = [
-		{
-			type: "list",
-			name: "sites",
-			message: "Select a website or add a new one:",
-			choices: sites
-		}
-	];
+	construct(selectSite);
 
-	inquirer.prompt( siteOptions, function( answers ) {
-		if(answers.sites === "Add new site"){
-			addNewSite();
-		} else {
-			getSelector();
+	function construct(selectSite){
+		for(key in fileConfig.sites){
+			sites.push(fileConfig.sites[key].sitename);
 		}
-	});
+
+		selectSite();
+	}
+
+	function selectSite(){
+		var siteOptions = [
+			{
+				type: "list",
+				name: "sites",
+				message: "Select a website or add a new one:",
+				choices: sites
+			}
+		];
+
+		inquirer.prompt( siteOptions, function( answers ) {
+			if(answers.sites === "Add new site"){
+				newSite = true;
+				addNewSite();
+			} else {
+				localConfig.selector = fileConfig.sites[answers.sites].selector;
+				getUrl();
+			}
+		});
+	}
 
 	function addNewSite(){
 		var selectorOptions = [
@@ -67,7 +83,11 @@ var app = function(){
 
 		inquirer.prompt( urlOptions, function( answers ) {
 			localConfig.url = answers.url;
-			writeConfig();
+			if(newSite){
+				writeConfig();
+			} else {
+				readArticle(localConfig);
+			}
 		});
 	}
 
@@ -104,31 +124,39 @@ var app = function(){
 		    $(article).children().each(function(i, element){
 		    	switch(element.name) {
 		    		case "p":
-		    			text += $(element).text();
+		    			text += $(element).text() + '\n';
 		    			break;
 		    		case "h1":
-		    			text += $(element).text();
+		    			text += $(element).text() + '\n';
 		    			break;	    		
 	    			case "h2":
-		    			text += $(element).text();
+		    			text += $(element).text() + '\n';
 		    			break;	    		
 	    			case "h3":
-		    			text += $(element).text();
+		    			text += $(element).text() + '\n';
 		    			break;	    		
 	    			case "h4":
-		    			text += $(element).text();
+		    			text += $(element).text() + '\n';
 		    			break;	    		
 	    			case "h5":
-		    			text += $(element).text();
+		    			text += $(element).text() + '\n';
 		    			break;	    		
 	    			case "h6":
-		    			text += $(element).text();
+		    			text += $(element).text() + '\n';
 		    			break;
+	    			default:
+	    				$(this).children().each(function(i, element){
+	    					if(element.name == "p"){
+	    						text += $(element).text() + '\n';
+	    					}
+	    				});
+	    				break;
 		    	}
 		    });
 
 		    /*OUR RETURNED TEXT*/
 		    console.log(text);
+		    say.speak(null, text);
 		    return true;
 
 		  } else {
