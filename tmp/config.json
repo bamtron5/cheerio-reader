@@ -1,1 +1,8 @@
-[object Object]
+{
+ "sites": {
+  "infowars": {
+   "sitename": "infowars",
+   "selector": "article"
+  }
+ }
+}
